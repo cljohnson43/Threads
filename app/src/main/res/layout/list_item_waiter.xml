@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="waiter"
+            type="com.example.threads.data.Waiter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_waiter_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@{waiter.name}"
+            android:textAlignment="center"
+            android:textSize="@dimen/large_font"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Sally John" />
+
+        <TextView
+            android:id="@+id/tv_now_serving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/snow_white"
+            android:padding="16dp"
+            android:text='@{"Now Serving\n" + (waiter.nowServing != null ? waiter.nowServing.toString() : "")}'
+            android:textAlignment="center"
+            tools:text="Now Serving\n21"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_waiter_name"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

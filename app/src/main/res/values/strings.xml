@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Threads</string>
+    <string name="btn_add_customer">Add Customer</string>
 </resources>
